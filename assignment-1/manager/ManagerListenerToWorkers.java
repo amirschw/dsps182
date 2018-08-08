@@ -23,7 +23,7 @@ public class ManagerListenerToWorkers implements MessageListener {
         DoneImageTask dit = parseMsg(msg);
         
         // Create task to append OCR to file
-        Manager.fileEditionPool.execute(new AppendRecognitionToFile(dit));
+        Manager.fileEditingPool.execute(new AppendRecognitionToFile(dit));
         
         // Tell SQS to delete the message
         try {

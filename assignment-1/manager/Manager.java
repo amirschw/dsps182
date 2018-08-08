@@ -34,11 +34,11 @@ public class Manager {
     static ExecutorService downloadPool;
     static ExecutorService distributionPool;
     static ExecutorService nodesCreationPool;
-    static ExecutorService fileEditionPool;
+    static ExecutorService fileEditingPool;
     static final int DOWNLOAD_THREADS = 5;
     static final int DISTRIBUTION_THREADS = 5;
     static final int CREATION_THREADS = 1;
-    static final int EDITION_THREADS = 5;
+    static final int EDITING_THREADS = 5;
     
     static FileManager fileManager;
     
@@ -108,7 +108,7 @@ public class Manager {
         downloadPool = Executors.newFixedThreadPool(DOWNLOAD_THREADS);
         distributionPool = Executors.newFixedThreadPool(DISTRIBUTION_THREADS);
         nodesCreationPool = Executors.newFixedThreadPool(CREATION_THREADS);
-        fileEditionPool = Executors.newFixedThreadPool(EDITION_THREADS);
+        fileEditingPool = Executors.newFixedThreadPool(EDITING_THREADS);
         
         // Create file manager
         fileManager = new FileManager();
